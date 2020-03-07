@@ -8,7 +8,8 @@ First bug which we have to fix is that there should only be one piece in one dro
 Second bug is to remove pieces on the drop zones when players click buttons for each theme.
 
 ## Getting Started
-This is a basic HTML / CSS / JavaScript build.
+This is a basic HTML / CSS / JavaScript build. If you'd like to see the steps
+[Click here google doc link]{https://docs.google.com/document/d/1nTgLLrGB3FVEztDETEWYaZctJOAE7zLaOFp_DFyHd8o/edit?usp=sharing)
 
 ## Prerequisites
 
