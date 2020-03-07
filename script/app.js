@@ -33,7 +33,7 @@
 	}
 
 	function allowDragOver(event) {
-		event.preventDefault();
+		event.preventDefault()
 		console.log('dragged over a drop zone');
 	}
 
@@ -52,16 +52,6 @@
 			}
 		console.log(this.childNodes);
 	}
-
-
-
-
-
-
-		//var node = puzzlePieces;
-		//dragZone.appendChild(node);
-
-
 
 	// add event handling here -> how is the user going to use our app?
 	// what triggers do we need?
