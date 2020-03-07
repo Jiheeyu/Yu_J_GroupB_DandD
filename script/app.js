@@ -3,6 +3,7 @@
 	const puzzleButtons = document.querySelectorAll('#buttonHolder img'),
 				puzzlePieces = document.querySelectorAll('.puzzle-pieces img'),
 				dropZones = document.querySelectorAll('.drop-zone'),
+				dragZone = document.querySelector('.puzzle-pieces'),
 				gameBoard = document.querySelector('.puzzle-board');
 
 	const pieceNames = ["topLeft","topRight","bottomLeft","bottomRight"];
@@ -17,8 +18,17 @@
 
 		// and set the drop zone background image based on the puzzle the user selects
 		gameBoard.style.backgroundImage = `url(images/backGround${this.dataset.puzzleref}.jpg)`;
-		//debugger;
 	}
+
+	function resetPuzzlePiece() {
+
+		let i = 0; i < dragZone.children.length; i++;
+		// 	this.childNodes[i].length === 0;
+		// 	}
+		console.log(dragZone.children);
+		debugger;
+  	}
+
 
 	function allowDrag(event) {
 		console.log('started draggin an image');
@@ -35,15 +45,33 @@
 		console.log('dropped on a drop zone');
 		// go and get the dragged element's ID from the data transfer object
 		let currentImage = event.dataTransfer.getData("text/plain");
+
 		// add that image to whatever drop zone we're dropping our image on
-		event.target.appendChild(document.querySelector(`#${currentImage}`));
+		//event.target.appendChild(document.querySelector(`#${currentImage}`));
+			if (this.childNodes.length === 0) {
+				event.target.appendChild(document.querySelector(`#${currentImage}`));
+			} else {
+					return;
+			}
+		console.log(this.childNodes);
 	}
+
+
+
+
+
+
+		//var node = puzzlePieces;
+		//dragZone.appendChild(node);
+
+
 
 	// add event handling here -> how is the user going to use our app?
 	// what triggers do we need?
 
 	// click on the bottom buttons to change the puzzle image we're working with
 	puzzleButtons.forEach(button => button.addEventListener('click', changeImageSet));
+	//puzzleButtons.forEach(button => button.addEventListener('click', resetPuzzlePiece));
 
 	puzzlePieces.forEach(piece => piece.addEventListener('dragstart', allowDrag));
 
