@@ -21,13 +21,10 @@
 	}
 
 	function resetPuzzlePiece() {
-
-		let i = 0; i < dragZone.children.length; i++;
-		// 	this.childNodes[i].length === 0;
-		// 	}
-		console.log(dragZone.children);
-		debugger;
-  	}
+		for(let i=0; i < puzzlePieces.length; i++){
+		dragZone.appendChild(puzzlePieces[i]);
+		}
+	}
 
 
 	function allowDrag(event) {
@@ -71,7 +68,7 @@
 
 	// click on the bottom buttons to change the puzzle image we're working with
 	puzzleButtons.forEach(button => button.addEventListener('click', changeImageSet));
-	//puzzleButtons.forEach(button => button.addEventListener('click', resetPuzzlePiece));
+	puzzleButtons.forEach(button => button.addEventListener('click', resetPuzzlePiece));
 
 	puzzlePieces.forEach(piece => piece.addEventListener('dragstart', allowDrag));
 
